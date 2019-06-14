@@ -6,43 +6,100 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 21:22:01 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/08 22:29:01 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/06/14 13:53:16 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-/*#include <stdio.h>
-#include "get_next_line.h"
-*/
 
 #include "get_next_line.h"
+#include <stdio.h>
+
 
 int		get_next_line(const int fd, char **line)
-{
-	static char		*s[1024];
-	char			buf[BUFF_SIZE + 1];
-	int				res_lect;
-	char			*box;
-
-	while (((!line)||(fd == -1)) && (res_lect = read(fd,buf,BUFF_SIZE) > 0))
+{	
+	static char	*store;
+	char		*buf;
+	char		*temp;
+	char		*nl;
+	
+	printf("-------------------------------------------------------------------\n");
+	
+	if (!store)
+		store = ft_strnew(0);
+	printf("[STORE]:%s\n", store);/////////////////////////////
+	while (!(nl = ft_strchr(store, '\n')))
 	{
-	//	buf = res_lect; 
-		s[fd] = "\0";
-		box = s[fd];
-		if (!(s[fd] = ft_strjoin(s[fd], buf)))
-			s[fd] = ft_strdup(buf);
-		ft_strdel(&box);
+			buf = ft_strnew(BUFF_SIZE);
+			read(fd, buf, BUFF_SIZE);
+			temp = ft_strdup(store);
+			ft_strdel(&store);
+			store = ft_strjoin(temp, buf);
+			ft_strdel(&buf);
+			ft_strdel(&temp);
 	}
-	if ((res_lect = -1 || !ft_strlen(s[fd])) && (!line || (*line = ft_strnew(0))))
-		return (res_lect);
-	box = ft_strchr(s[fd],'\n');
-	if (box && !(*box = '\0'))
-		box = ft_strdup(box + 1);
-	else
-		box = ft_strnew(0);
-	*line = ft_strdup(s[fd]);
-	free(s[fd]);
-	s[fd] = box;
-	return (1);	
+	*nl = '\0';
+	if (*line)
+		ft_strdel(line);
+	*line = ft_strdup(store);
+	++nl;
+	temp = ft_strdup(nl);
+	ft_strdel(&store);
+	store = ft_strdup(temp);
+	ft_strdel(&temp);
+	ft_strclr(nl);
+	printf("[STORE]:%s\n", store);///////////////////////////
+	printf("[LEN]:%zu\n", ft_strlen(store));///////////////// 
+	return (0);
 }
+
+/*	else
+		while ((buf = ft_strnew(BUFF_SIZE)) && (read(fd, buf, BUFF_SIZE) > 0)\
+		   && !(nl = ft_strchr(buf, '\n')))
+		{
+			printf("LIN: %s\n", lin);
+			join = ft_strjoin(temp, lin);
+			printf("JOIN: %s\n", join);
+			ft_strdel(&temp);
+			temp = ft_strdup(join);
+			printf("TEMP: %s\n", temp);
+			ft_strdel(&join);
+			
+			join = temp;
+			printf("JOIN: %s\n", join);
+			ft_strdel(&lin);
+		}
+	printf("[BUF]:%s\n", buf);//
+	*nl = '\0';
+	printf("[BUF]:%s\n", buf);//
+	*line = ft_strdup(buf);
+	++nl;
+	printf("[NL]:%s\n", nl);//
+	temp = ft_strdup(nl);
+	printf("[TEMP]:%s\n", temp);//
+	ft_strdel(&buf);
+	printf("[BUF]:%s\n", buf);//
+*/
+/*	printf("TEMP: %s\n", temp);
+	nl_to_zero(temp);
+	printf("TEMP: %s\n", temp);
+	*line = ft_strdup(join);
+	printf("LINE: %s\n", *line);
+	temp += ft_strlen(temp);
+	join = ft_strjoin(temp, lin);
+	printf("JOIN: %s\n", join);
+	++line;
+	*line = ft_strdup(join);
+	ft_strdel(&join);
+	ft_strdel(&temp);
+	ft_strdel(&lin);
+	--line;
+
+	if (*line)
+		ft_strdel(*line);
+	*/
+//	return (0);
+//}
+
+
 /*
 int		str_nl(char *s)
 {
@@ -183,12 +240,6 @@ int		get_next_line(const int fd, char **line)
 		while (**line  
 		ft_strclr(s);
 		ft_strcpy(s, temp);
-
-
-		
-			
-			
-			
 			
 			i = 0;
 			while (s[i])
