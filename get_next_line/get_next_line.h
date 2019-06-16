@@ -6,7 +6,7 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 21:21:28 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/14 13:50:05 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/06/15 22:44:06 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,5 @@
 # define BUFF_SIZE 1
 
 int		get_next_line(const int fd, char **line);
-
 
 #endif
