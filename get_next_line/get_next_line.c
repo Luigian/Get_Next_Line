@@ -6,7 +6,7 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 21:22:01 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/16 22:39:11 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/06/21 10:13:31 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,12 @@ int		get_next_line(const int fd, char **line)
 			ft_strdel(&store[fd]);
 			return (0);
 		}
+		else if (!n)
+		{
+			*line = ft_strdup(store[fd]);			
+			ft_strdel(&store[fd]);
+			return (1);
+		}		
 		temp = ft_strdup(store[fd]);
 		ft_strdel(&store[fd]);
 		store[fd] = ft_strjoin(temp, buf);
