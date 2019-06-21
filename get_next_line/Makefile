@@ -5,39 +5,32 @@
 #                                                     +:+ +:+         +:+      #
 #    By: lusanche <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/06/06 21:38:14 by lusanche          #+#    #+#              #
-#    Updated: 2019/06/06 22:04:40 by lusanche         ###   ########.fr        #
+#    Created: 2019/05/23 10:41:38 by lusanche          #+#    #+#              #
+#    Updated: 2019/06/06 16:10:27 by lusanche         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = test_gnl
-CC = clang
-FLAGS = -Wall -Wextra -Werror
-INCLUDES = libft/includes
-SRC = get_next_line.c
-MAIN = main.c
-OBJ_C = get_next_line.o
-OBJ_M = main.o
-LIB_DIR = libft/ 
+NAME = libft.a
+HEAD = includes/libft.h
+SRCS = ft*.c
+OBJS = *.o
 
 $(NAME):
-	@make -C $(LIB_DIR) fclean && make -C $(LIB_DIR)
-	@$(CC) $(FlAGS) -I $(INCLUDES) -o $(OBJ_C) -c $(SRC)
-	@$(CC) $(FLAGS) -I $(INCLUDES) -o $(OBJ_M) -c $(MAIN)
-	@$(CC) -o $(NAME) $(OBJ_M) $(OBJ_C) -I $(INCLUDES) -L $(LIB_DIR) -lft
-	@echo "[INFO]  Executable [$(NAME)] created (objects remaining in both directories)"
+	@gcc -c -Wall -Wextra -Werror $(SRCS) -I $(HEAD)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
+	@echo "[INFO] Library [$(NAME)] created (objects remaining in directory)"
 
 .PHONY: all, clean, fclean, re
 
 all: $(NAME)
 
 clean:
-	@rm -f $(OBJ_C) $(OBJ_M)
-	@make -C $(LIB_DIR) fclean 
-	@echo "[INFO] Objects removed in both directories"
+	@rm -f $(OBJS)
+	@echo "[INFO] Objects removed"
 
 fclean: clean
 	@rm -f $(NAME)
-	@echo "[INFO] Executable [$(NAME)] removed"
+	@echo "[INFO] Library [$(NAME)] removed"
 
 re: fclean all
