@@ -6,7 +6,7 @@
 /*   By: lusanche <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/05 21:22:41 by lusanche          #+#    #+#             */
-/*   Updated: 2019/06/20 14:21:20 by lusanche         ###   ########.fr       */
+/*   Updated: 2019/06/21 15:04:49 by lusanche         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,22 @@ int main(int argc, char **argv)
 	int		n;
 	int		f;
 
-	if (!strcmp(argv[argc - 1], "mix"))
+	if (argc == 1)
+	{
+		line = 0;
+		while ((ret = get_next_line(0, &ptr)) > 0)
+		{
+			printf("[Stdin] [FD:0] [RetVal:%d] [Line#%d] $%s\n", ret, ++line, ptr);
+			ft_strdel(&ptr);
+		}
+		printf("[Stdin] [FD:0] [RetVal:%d] [Line#%d] %s", ret, ++line, ptr);
+		if (ret == -1)
+			printf(" ERROR\n");
+		else if (ret == 0)
+			printf(" END OF STDIN\n");
+		close(0);
+	}
+	else if (!strcmp(argv[argc - 1], "mix"))
 	{
 		 printf("[INFO] Enter mix number\n");
 		return (-1);
@@ -63,7 +78,7 @@ int main(int argc, char **argv)
 					ret = get_next_line(fds[j], &ptr);
 					if (ret == 0)
 					{
-						printf("[%s] [FD:%d] [RetVal:%d] Line#%d %s", \
+						printf("[%s] [FD:%d] [RetVal:%d] [Line#%d] %s", \
 						*(argv + j + 1), fds[j], ret, ++lines[j], ptr);
 						printf(" EOF\n");
 						close(fds[j]);
@@ -72,7 +87,7 @@ int main(int argc, char **argv)
 					}
 					else if (ret == -1)
 					{
-						printf("[%s] [FD:%d] [RetVal:%d] Line#%d %s", \
+						printf("[%s] [FD:%d] [RetVal:%d] [Line#%d] %s", \
 						*(argv + j + 1), fds[j], ret, ++lines [j], ptr );
 						printf(" ERROR\n");
 						close(fds[j]);
@@ -81,7 +96,7 @@ int main(int argc, char **argv)
 					}
 					else if (ret == 1)
 					{
-						printf("[%s] [FD:%d] [RetVal:%d] Line#%d $%s\n", \
+						printf("[%s] [FD:%d] [RetVal:%d] [Line#%d] $%s\n", \
 							*(argv + j + 1), fds[j], ret, ++lines[j], ptr);
 						ft_strdel(&ptr);
 					}
@@ -101,10 +116,10 @@ int main(int argc, char **argv)
 			fd = open(*argv, O_RDONLY, 0);
 			while ((ret = get_next_line(fd, &ptr)) > 0)
 			{
-				printf("[%s] [FD:%d] [RetVal:%d] Line#%d $%s\n", *argv, fd, ret, ++line, ptr);
+				printf("[%s] [FD:%d] [RetVal:%d] [Line#%d] $%s\n", *argv, fd, ret, ++line, ptr);
 				ft_strdel(&ptr);
 			}
-			printf("[%s] [FD:%d] [RetVal:%d] Line#%d %s", *argv, fd, ret, ++line, ptr);
+			printf("[%s] [FD:%d] [RetVal:%d] [Line#%d] %s", *argv, fd, ret, ++line, ptr);
 			if (ret == -1)
 				printf(" ERROR\n");
 			else if (ret == 0)
@@ -113,21 +128,6 @@ int main(int argc, char **argv)
 			if (argc != 1)
 				printf("\n");
 		}
-	}
-	else if (argc == 1)
-	{
-		line = 0;
-		while ((ret = get_next_line(0, &ptr)) > 0)
-		{
-			printf("[Stdin] FD:0 RetVal:%d Line#%d $%s\n", ret, ++line, ptr);
-			ft_strdel(&ptr);
-		}
-		printf("[Stdin] FD:0 RetVal:%d Line#%d %s", ret, ++line, ptr);
-		if (ret == -1)
-			printf(" ERROR\n");
-		else if (ret == 0)
-			printf(" END OF STDIN\n");
-		close(0);
 	}
 	return (0);
 }
