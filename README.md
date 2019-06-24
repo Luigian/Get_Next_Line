@@ -2,15 +2,15 @@
 
 ### Key points:
 
-a) Function read and buf size adaptation.
+* Function read and buf size adaptation.
 
-b) Utilization of temporal variables.
+* Utilization of temporal variables.
 
-c) Static variables.
+* Static variables.
 
-d) Proper allocation and memory free.
+* Proper allocation and memory free.
 
-e) Managing multiple file descriptors.
+* Managing multiple file descriptors.
 
 
 ### Compilation:
