@@ -4,6 +4,7 @@ Compilation:
 `make all`
 
 Read from Standard Input:
+
 `./test_gnl"`
 
 Read from a single file:
