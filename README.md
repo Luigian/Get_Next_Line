@@ -2,10 +2,11 @@
 
 Compilation:
 
- `git clone https://github.com/mikim42/Get_next_line.git`
+ `make all`
 
-**Usage:**
-* `get next line is a function that reads a file line by line`
+Running
+
+`./test_gnl "file_path"`
 
 **Return value:**
 * `return 1 when it read a line`
