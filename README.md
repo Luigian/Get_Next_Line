@@ -13,17 +13,17 @@ Delete files generated from compilation and recompile:
 
 ### Execution:
 
-Read from Standard Input:
 `./test_gnl"`
+Read from Standard Input:
 
-Read from a single file:
 `./test_gnl "file_path"`
+Read from a single file:
 
-Read from multiple files:
 `./test_gnl "file_path_1" "file_path_2" "file_path_3"`
+Read from multiple files:
 
-Read n lines from multiple files:
 `./test_gnl "file_path_1" "file_path_2" "file_path_3" mix n`
+Read n lines from multiple files:
 
 ### Returning values:
 `1` when it read a line
