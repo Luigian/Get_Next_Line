@@ -27,5 +27,7 @@ Read n lines from multiple files:
 
 ### Returning values:
 `1` when it read a line
+
 `0` when it finished reading a file
+
 `-1` when an error occurs
