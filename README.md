@@ -1,6 +1,6 @@
 # Get Next Line
 
-__Installation:__
+Installation:
 
 * `git clone https://github.com/mikim42/Get_next_line.git`
 
