@@ -3,19 +3,19 @@
 ### Compilation:
 
 `make all`
-First time compilation:
+First time compilation.
 
 `make fclean`
-Delete files generated from compilation:
+Delete files generated from compilation.
 
 `make re`
-Delete files generated from compilation and recompile:
+Delete files generated from compilation and recompile.
 
 
 ### Execution:
 
 `./test_gnl"`
-Read from Standard Input:
+Read from Standard Input.
 
 `./test_gnl "file_path"`
 Read from a single file.
