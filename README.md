@@ -1,5 +1,14 @@
 # Get Next Line
 
+### Key points:
+
+a) Function read and buf size adaptation.
+b) Utilization of temporal variables.
+c) Static variables
+d) Proper allocation and memory free.
+e) Managing multiple file descriptors.
+
+
 ### Compilation:
 
 `make all`
