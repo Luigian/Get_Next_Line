@@ -1,6 +1,6 @@
 # Get Next Line
 
-## Compilation:
+### Compilation:
 `make all`
 
 Read from Standard Input:
