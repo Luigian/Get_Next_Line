@@ -2,14 +2,15 @@
 
 ### Compilation:
 
-First time compilation:
 `make all`
+First time compilation:
 
-Delete files generated from compilation:
 `make fclean`
+Delete files generated from compilation:
 
-Delete files generated from compilation and recompile:
 `make re`
+Delete files generated from compilation and recompile:
+
 
 ### Execution:
 
@@ -17,17 +18,17 @@ Delete files generated from compilation and recompile:
 Read from Standard Input:
 
 `./test_gnl "file_path"`
-Read from a single file:
+Read from a single file.
 
 `./test_gnl "file_path_1" "file_path_2" "file_path_3"`
-Read from multiple files:
+Read from multiple files.
 
 `./test_gnl "file_path_1" "file_path_2" "file_path_3" mix n`
-Read n lines from multiple files:
+Read n lines from multiple files.
 
 ### Returning values:
-`1` when it read a line
+`1` when it read a line.
 
-`0` when it finished reading a file
+`0` when it finished reading a file.
 
-`-1` when an error occurs
+`-1` when an error occurs.
