@@ -13,7 +13,6 @@ d) Proper allocation and memory free.
 e) Managing multiple file descriptors.
 
 
-
 ### Compilation:
 
 `make all`
