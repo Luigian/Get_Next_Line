@@ -2,7 +2,7 @@
 
 Compilation:
 
- git clone https://github.com/mikim42/Get_next_line.git
+ `git clone https://github.com/mikim42/Get_next_line.git
 
 **Usage:**
 * `get next line is a function that reads a file line by line`
