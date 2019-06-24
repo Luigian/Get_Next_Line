@@ -1,6 +1,6 @@
 # Get Next Line
 
-`get_next_line` is a function that returns a line read from a file descriptor. Calling it in a loop will read the text one line at a time until its end.
+`get_next_line` is a function that returns a line read from a file descriptor. Calling it in a loop will read one line at a time until the end of the text.
 
 ### Key points:
 
