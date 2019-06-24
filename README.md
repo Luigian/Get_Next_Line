@@ -31,4 +31,4 @@
 
 `0` | No read, end of file.
 
-`-1` | Error occurs.
+`-1` | Error.
