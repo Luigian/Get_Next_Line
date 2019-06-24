@@ -26,6 +26,6 @@ Read n lines from multiple files:
 `./test_gnl "file_path_1" "file_path_2" "file_path_3" mix n`
 
 ### Returning values:
-`1 when it read a line`
-`0 when it finished reading a file`
-`-1 when an error occurs`
+`1` when it read a line
+`0` when it finished reading a file
+`-1` when an error occurs
