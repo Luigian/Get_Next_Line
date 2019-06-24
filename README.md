@@ -2,7 +2,7 @@
 
 ### Key points:
 
-a) Function read and buf size adaptation.
+#### a) Function read and buf size adaptation.
 
 b) Utilization of temporal variables.
 
