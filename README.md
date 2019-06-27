@@ -2,17 +2,17 @@
 
 # Get Next Line
 
-`get_next_line` is a function that returns a line read from a file descriptor. Calling it in a loop will read one line at a time until the end of the text.
+In this project i created a function called `get_next_line` wich allow you to read content line by line from a file descriptor (whether a file, standard input, or even later a network connection). Calling it in a loop will read one line at a time until the end of the text.
 
 ### Key points:
 
-* Function read and buf size adaptation.
+* Functions `open`, `read`, `close` and buff size adaptation.
 
 * Utilization of temporal variables.
 
 * Static variables.
 
-* Proper allocation and memory free.
+* Proper allocation and destruction of heap memory.
 
 * Managing multiple file descriptors.
 
