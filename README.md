@@ -16,6 +16,23 @@ In this project i created a function called `get_next_line` wich allow you to re
 
 * Managing multiple file descriptors.
 
+### Objectives:
+
+* Filedescriptors. 
+
+* Buffering.
+
+* Basic parsing. 
+
+
+### Skills:
+
+* Imperative programming 
+
+* Rigor 
+
+* Algorithms & AI 
+
 
 ### Compilation:
 
