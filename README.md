@@ -1,4 +1,4 @@
-![](resources/gnl_banner.png)
+![](resources/images/gnl_banner.png)
 
 # Get Next Line
 
