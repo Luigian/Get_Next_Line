@@ -34,7 +34,7 @@ In this project i created a function called `get_next_line` wich allow you to re
 
 ### Execution:
 
-`./test_gnl"` | Read from Standard Input.
+`./test_gnl` | Read from Standard Input.
 
 `./test_gnl "file_path"` | Read from a single file.
 
