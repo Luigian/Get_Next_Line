@@ -4,8 +4,6 @@
 
 In this project i created a function called `get_next_line` wich allow you to read content line by line from a file descriptor (whether a file, standard input, or even later a network connection). Calling it in a loop will read one line at a time until the end of the text.
 
-![](resources/images/gnl_flowchart.png)
-
 ### Key points:
 
 * Functions `open`, `read`, `close` and buff size adaptation.
@@ -25,6 +23,9 @@ In this project i created a function called `get_next_line` wich allow you to re
 * Imperative programming.
 * Rigor.
 * Algorithms & AI.
+
+### Flow chart:
+![](resources/images/gnl_flowchart.png)
 
 ### Compilation:
 
