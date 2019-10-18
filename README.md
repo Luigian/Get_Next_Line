@@ -30,7 +30,7 @@ In this project i created a function called `get_next_line` wich allow you to re
 * Rigor.
 * Algorithms & AI.
 
-### Compilation:
+### Compilation ('get_next_line' directory):
 
 `make all` | First time compilation.
 
