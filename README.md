@@ -55,3 +55,8 @@ In this project i created a function called `get_next_line` wich allow you to re
 `0` | No read, end of file.
 
 `-1` | Error.
+
+## Author:
+
+[*Luis Sanchez*](https://www.linkedin.com/in/luis-sanchez-13bb3b189/)
+2019. Freemont, CA
