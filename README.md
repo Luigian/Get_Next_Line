@@ -4,13 +4,13 @@
 
 In this project i created a function called `get_next_line` wich allow you to read content line by line from a file descriptor (whether a file, standard input, or even later a network connection). Calling it in a loop will read one line at a time until the end of the text.
 
-### Pseudo code flowchart:
+## Pseudo code flowchart:
 ![](resources/images/gnl_flowchart_pseudo.png)
 
-### Source code flowchart:
+## Source code flowchart:
 ![](resources/images/gnl_flowchart_source.png)
 
-### Key points:
+## Key points:
 
 * Functions `open`, `read`, `close` and buff size adaptation.
 * Utilization of temporal variables.
@@ -18,19 +18,19 @@ In this project i created a function called `get_next_line` wich allow you to re
 * Proper allocation and destruction of heap memory.
 * Managing multiple file descriptors.
 
-### Objectives:
+## Objectives:
 
 * Filedescriptors. 
 * Buffering.
 * Basic parsing. 
 
-### Skills:
+## Skills:
 
 * Imperative programming.
 * Rigor.
 * Algorithms & AI.
 
-### Compilation ('get_next_line' directory):
+## Compilation ('get_next_line' directory):
 
 `make all` | First time compilation.
 
@@ -38,7 +38,7 @@ In this project i created a function called `get_next_line` wich allow you to re
 
 `make re` | Delete files generated from compilation and recompile.
 
-### Execution:
+## Execution:
 
 `./test_gnl` | Read from Standard Input.
 
@@ -48,7 +48,7 @@ In this project i created a function called `get_next_line` wich allow you to re
 
 `./test_gnl "file_path_1" "file_path_2" "file_path_3" mix n` | Read n lines from multiple files.
 
-### Returning values:
+## Returning values:
 
 `1` | Line read.
 
@@ -56,7 +56,7 @@ In this project i created a function called `get_next_line` wich allow you to re
 
 `-1` | Error.
 
-### Credits:
+## Credits:
 
 [*Luis Sanchez*](https://www.linkedin.com/in/luis-sanchez-13bb3b189/)
 2019. Freemont, CA
